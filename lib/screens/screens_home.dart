@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class homeScreen extends StatelessWidget {
 
-  List<Eve> get events => [
+   List<Eve> get events => [
     Eve(name: "eve 1", location: "loc 1", startDateTime: DateTime.now()),
     Eve(name: "eve 2", location: "loc 2", startDateTime: DateTime.now()),
     Eve(name: "eve 3", location: "loc 3", startDateTime: DateTime.now()),
