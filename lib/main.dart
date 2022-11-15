@@ -31,27 +31,29 @@ class FlutterTutorialApp extends StatelessWidget {
             padding: EdgeInsets.all(40),
             itemCount: events.length,
             itemBuilder: (_, index) => Card(
-                color: Colors.orange,
-                elevation: 10,
-                margin: EdgeInsets.symmetric(vertical: 7.0),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15)),
-                child: Column(
-                  children: [
-                    Text(
-                      events[index].name,
-                      style: TextStyle(fontSize: 40),
+                  color: Colors.orange,
+                  elevation: 10,
+                  margin: EdgeInsets.symmetric(vertical: 7.0),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15)),
+                  child: ListTile(
+                    title: Text(events[index].name),
+                    subtitle: Text(
+                        "${events[index].location} - ${events[index].startDateTime}"),
+                    leading: Icon(
+                      Icons.local_activity,
+                      color: Colors.black,
+                      size: 40.0,
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(events[index].location),
-                        SizedBox(width: 20.0),
-                        Text(events[index].startDateTime.toString())
-                      ],
-                    )
-                  ],
-                ))),
+                    trailing: IconButton(
+                      icon: Icon(Icons.edit),
+                      onPressed: null,
+                    ),
+                    onTap: () => print("${events[index].name} -- tap"),
+                    onLongPress: () =>
+                        print("${events[index].name} -- longtap"),
+                  ),
+                )),
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
           child: Text("+"),
